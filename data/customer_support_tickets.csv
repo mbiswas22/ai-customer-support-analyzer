@@ -1,0 +1,501 @@
+ticket_id,text,category,sentiment,urgent,created_at,response_time_hours
+1,Billing invoice incorrect,Billing,Negative,True,2024-03-11,60
+2,General inquiry,General,Negative,False,2024-01-10,21
+3,Error while uploading file,Technical,Neutral,True,2024-02-03,1
+4,Website not loading,Technical,Negative,True,2024-01-28,43
+5,How to use this feature?,General,Negative,False,2024-02-06,61
+6,Feature not working properly,Technical,Positive,False,2024-02-11,4
+7,App crashes on login,Technical,Positive,False,2024-02-09,34
+8,Website not loading,Technical,Negative,True,2024-01-16,42
+9,Verification email not received,Account,Positive,True,2024-03-26,44
+10,Unable to reset password,Account,Positive,True,2024-02-17,24
+11,Request for demo,General,Negative,True,2024-01-31,69
+12,App crashes on login,Technical,Positive,False,2024-01-30,59
+13,How to use this feature?,General,Negative,False,2024-01-28,58
+14,Unable to reset password,Account,Positive,False,2024-03-18,69
+15,Billing invoice incorrect,Billing,Neutral,False,2024-03-11,40
+16,Login issues with account,Account,Negative,False,2024-01-07,71
+17,Feature not working properly,Technical,Neutral,True,2024-02-27,27
+18,Charged twice for subscription,Billing,Negative,False,2024-02-18,48
+19,Website not loading,Technical,Neutral,False,2024-01-15,48
+20,Charged twice for subscription,Billing,Negative,True,2024-01-30,3
+21,Refund not processed,Billing,Negative,False,2024-01-27,53
+22,App crashes on login,Technical,Positive,False,2024-01-17,20
+23,Need more information about product,General,Neutral,False,2024-02-18,10
+24,General inquiry,General,Neutral,False,2024-01-12,1
+25,Payment failed again,Billing,Negative,True,2024-02-18,18
+26,Unable to reset password,Account,Positive,False,2024-02-10,52
+27,Feature not working properly,Technical,Positive,False,2024-02-22,45
+28,Unable to update payment method,Billing,Neutral,False,2024-01-20,47
+29,Refund not processed,Billing,Positive,False,2024-02-07,60
+30,How to use this feature?,General,Neutral,False,2024-02-19,35
+31,Profile update failed,Account,Positive,True,2024-02-02,70
+32,Charged twice for subscription,Billing,Positive,False,2024-03-26,70
+33,Account locked unexpectedly,Account,Positive,False,2024-01-14,24
+34,Error while uploading file,Technical,Negative,True,2024-01-27,18
+35,Verification email not received,Account,Negative,True,2024-01-17,31
+36,Login issues with account,Account,Negative,False,2024-02-13,19
+37,System timeout issue,Technical,Positive,True,2024-03-14,35
+38,How to use this feature?,General,Negative,True,2024-02-11,19
+39,Feedback on service,General,Neutral,True,2024-03-25,40
+40,Error while uploading file,Technical,Neutral,True,2024-01-31,71
+41,Request for demo,General,Negative,False,2024-01-29,52
+42,Feedback on service,General,Positive,True,2024-03-20,71
+43,Unable to update payment method,Billing,Positive,False,2024-01-06,51
+44,Website not loading,Technical,Negative,True,2024-03-26,14
+45,Profile update failed,Account,Negative,False,2024-01-04,59
+46,Billing invoice incorrect,Billing,Neutral,False,2024-01-01,71
+47,General inquiry,General,Negative,False,2024-02-05,46
+48,Feature not working properly,Technical,Negative,False,2024-02-16,48
+49,Verification email not received,Account,Negative,False,2024-02-11,2
+50,Refund not processed,Billing,Neutral,False,2024-02-20,2
+51,General inquiry,General,Neutral,False,2024-03-27,31
+52,Refund not processed,Billing,Neutral,True,2024-01-25,41
+53,Profile update failed,Account,Negative,False,2024-02-20,6
+54,Unable to update payment method,Billing,Positive,False,2024-02-18,25
+55,Verification email not received,Account,Neutral,True,2024-01-20,68
+56,Login issues with account,Account,Neutral,False,2024-02-05,69
+57,Profile update failed,Account,Negative,False,2024-01-04,19
+58,General inquiry,General,Negative,False,2024-02-21,23
+59,App crashes on login,Technical,Neutral,False,2024-03-19,14
+60,Unable to reset password,Account,Positive,False,2024-03-08,60
+61,Unable to update payment method,Billing,Positive,False,2024-03-01,56
+62,Feedback on service,General,Neutral,True,2024-03-27,51
+63,Refund not processed,Billing,Positive,False,2024-03-28,12
+64,Website not loading,Technical,Negative,True,2024-02-25,56
+65,Profile update failed,Account,Positive,False,2024-03-01,41
+66,General inquiry,General,Neutral,True,2024-01-26,49
+67,Request for demo,General,Positive,True,2024-03-16,28
+68,Refund not processed,Billing,Neutral,True,2024-01-25,7
+69,Payment failed again,Billing,Positive,True,2024-03-18,25
+70,Feature not working properly,Technical,Neutral,False,2024-03-06,68
+71,Charged twice for subscription,Billing,Neutral,False,2024-03-14,48
+72,Request for demo,General,Negative,False,2024-01-15,35
+73,Account locked unexpectedly,Account,Positive,False,2024-03-13,3
+74,Request for demo,General,Neutral,True,2024-03-14,28
+75,General inquiry,General,Neutral,False,2024-01-14,22
+76,Need more information about product,General,Negative,False,2024-01-20,20
+77,Refund not processed,Billing,Positive,False,2024-02-09,60
+78,General inquiry,General,Negative,False,2024-02-28,58
+79,Need more information about product,General,Positive,True,2024-02-16,28
+80,Request for demo,General,Positive,False,2024-03-20,34
+81,Request for demo,General,Positive,True,2024-02-17,58
+82,Payment failed again,Billing,Negative,False,2024-03-02,5
+83,Error while uploading file,Technical,Positive,False,2024-03-12,27
+84,Feature not working properly,Technical,Negative,True,2024-01-05,35
+85,Verification email not received,Account,Positive,False,2024-02-07,21
+86,Feedback on service,General,Neutral,True,2024-03-11,47
+87,Feature not working properly,Technical,Negative,False,2024-03-03,54
+88,Website not loading,Technical,Negative,False,2024-03-12,50
+89,Feedback on service,General,Negative,True,2024-03-12,19
+90,Feature not working properly,Technical,Neutral,True,2024-03-10,40
+91,Need more information about product,General,Negative,True,2024-02-14,28
+92,Account locked unexpectedly,Account,Positive,True,2024-01-04,13
+93,Payment failed again,Billing,Neutral,False,2024-02-12,49
+94,Verification email not received,Account,Positive,False,2024-02-07,22
+95,Charged twice for subscription,Billing,Positive,True,2024-01-24,5
+96,General inquiry,General,Positive,False,2024-01-27,56
+97,Request for demo,General,Neutral,True,2024-03-07,43
+98,Request for demo,General,Positive,True,2024-03-11,65
+99,Account locked unexpectedly,Account,Positive,True,2024-02-17,32
+100,Unable to update payment method,Billing,Neutral,False,2024-03-26,37
+101,Feedback on service,General,Negative,False,2024-02-21,3
+102,Login issues with account,Account,Neutral,True,2024-02-12,13
+103,How to use this feature?,General,Neutral,False,2024-03-13,16
+104,Feedback on service,General,Negative,False,2024-02-10,44
+105,Refund not processed,Billing,Neutral,False,2024-03-13,47
+106,General inquiry,General,Negative,True,2024-01-25,3
+107,Billing invoice incorrect,Billing,Negative,True,2024-03-27,54
+108,Unable to reset password,Account,Neutral,False,2024-01-28,41
+109,Unable to update payment method,Billing,Negative,False,2024-01-12,47
+110,Profile update failed,Account,Positive,True,2024-03-30,3
+111,Feedback on service,General,Neutral,False,2024-02-04,67
+112,Feature not working properly,Technical,Positive,False,2024-03-28,67
+113,Need more information about product,General,Positive,False,2024-01-04,39
+114,Unable to reset password,Account,Negative,False,2024-01-31,10
+115,Error while uploading file,Technical,Positive,True,2024-02-25,40
+116,System timeout issue,Technical,Negative,True,2024-03-11,18
+117,Payment failed again,Billing,Negative,True,2024-02-02,69
+118,Charged twice for subscription,Billing,Negative,True,2024-01-02,42
+119,System timeout issue,Technical,Neutral,True,2024-03-31,62
+120,App crashes on login,Technical,Positive,True,2024-03-22,69
+121,Login issues with account,Account,Neutral,False,2024-01-14,3
+122,Refund not processed,Billing,Neutral,False,2024-02-20,54
+123,Payment failed again,Billing,Negative,False,2024-02-20,69
+124,Account locked unexpectedly,Account,Positive,True,2024-02-26,18
+125,General inquiry,General,Positive,True,2024-03-25,60
+126,Error while uploading file,Technical,Negative,False,2024-01-07,63
+127,Feature not working properly,Technical,Negative,False,2024-03-01,9
+128,Login issues with account,Account,Neutral,False,2024-03-29,61
+129,Refund not processed,Billing,Neutral,True,2024-02-18,47
+130,Charged twice for subscription,Billing,Neutral,False,2024-02-07,67
+131,Feature not working properly,Technical,Neutral,False,2024-01-15,13
+132,Feature not working properly,Technical,Negative,True,2024-01-27,27
+133,How to use this feature?,General,Negative,True,2024-03-23,61
+134,App crashes on login,Technical,Neutral,True,2024-01-07,51
+135,Error while uploading file,Technical,Positive,False,2024-03-07,13
+136,Website not loading,Technical,Positive,False,2024-03-01,31
+137,General inquiry,General,Neutral,False,2024-03-01,67
+138,How to use this feature?,General,Neutral,True,2024-03-06,38
+139,Profile update failed,Account,Neutral,False,2024-02-01,48
+140,Feature not working properly,Technical,Positive,True,2024-02-03,17
+141,App crashes on login,Technical,Positive,False,2024-01-13,67
+142,Payment failed again,Billing,Positive,True,2024-01-07,44
+143,Website not loading,Technical,Positive,True,2024-02-23,3
+144,Feature not working properly,Technical,Negative,True,2024-01-24,23
+145,Feature not working properly,Technical,Neutral,False,2024-03-20,10
+146,Login issues with account,Account,Negative,True,2024-03-19,25
+147,System timeout issue,Technical,Positive,False,2024-02-05,46
+148,Request for demo,General,Negative,True,2024-02-03,54
+149,App crashes on login,Technical,Positive,True,2024-03-25,68
+150,Website not loading,Technical,Neutral,True,2024-01-09,30
+151,Feature not working properly,Technical,Neutral,True,2024-03-14,34
+152,Error while uploading file,Technical,Negative,False,2024-01-17,50
+153,Unable to reset password,Account,Negative,False,2024-02-24,18
+154,Billing invoice incorrect,Billing,Positive,False,2024-02-11,36
+155,Feature not working properly,Technical,Positive,False,2024-03-21,46
+156,Error while uploading file,Technical,Neutral,True,2024-03-29,42
+157,Error while uploading file,Technical,Negative,False,2024-02-07,39
+158,System timeout issue,Technical,Positive,False,2024-03-03,15
+159,System timeout issue,Technical,Neutral,False,2024-02-23,64
+160,Profile update failed,Account,Neutral,False,2024-02-09,30
+161,Verification email not received,Account,Neutral,False,2024-03-22,47
+162,Request for demo,General,Neutral,False,2024-01-24,41
+163,Profile update failed,Account,Neutral,False,2024-01-06,65
+164,Payment failed again,Billing,Negative,False,2024-02-25,63
+165,Unable to update payment method,Billing,Positive,False,2024-02-21,2
+166,Account locked unexpectedly,Account,Neutral,True,2024-02-12,55
+167,Login issues with account,Account,Positive,True,2024-01-13,15
+168,Login issues with account,Account,Positive,True,2024-03-16,39
+169,Request for demo,General,Neutral,True,2024-01-25,47
+170,Verification email not received,Account,Negative,False,2024-03-07,23
+171,Website not loading,Technical,Negative,False,2024-01-08,19
+172,Profile update failed,Account,Negative,True,2024-01-28,46
+173,Request for demo,General,Negative,True,2024-02-09,50
+174,Verification email not received,Account,Positive,True,2024-01-22,7
+175,Error while uploading file,Technical,Negative,True,2024-02-03,22
+176,App crashes on login,Technical,Neutral,True,2024-03-12,5
+177,Unable to reset password,Account,Positive,False,2024-01-27,45
+178,Feature not working properly,Technical,Negative,True,2024-02-20,21
+179,Feedback on service,General,Negative,False,2024-03-14,3
+180,Login issues with account,Account,Neutral,False,2024-01-14,56
+181,Charged twice for subscription,Billing,Negative,True,2024-02-11,20
+182,General inquiry,General,Neutral,False,2024-01-01,56
+183,Login issues with account,Account,Positive,True,2024-01-01,25
+184,Need more information about product,General,Neutral,False,2024-02-28,33
+185,Unable to update payment method,Billing,Positive,True,2024-02-26,68
+186,Profile update failed,Account,Neutral,False,2024-03-16,64
+187,Unable to update payment method,Billing,Neutral,False,2024-03-09,4
+188,Unable to reset password,Account,Neutral,False,2024-03-19,36
+189,General inquiry,General,Negative,True,2024-02-11,64
+190,App crashes on login,Technical,Neutral,False,2024-03-15,69
+191,System timeout issue,Technical,Neutral,True,2024-01-14,39
+192,Error while uploading file,Technical,Negative,False,2024-03-22,34
+193,Billing invoice incorrect,Billing,Neutral,True,2024-02-29,64
+194,Request for demo,General,Negative,True,2024-01-14,63
+195,System timeout issue,Technical,Negative,False,2024-03-28,65
+196,Website not loading,Technical,Negative,False,2024-02-02,57
+197,Unable to reset password,Account,Negative,False,2024-01-16,18
+198,Unable to reset password,Account,Neutral,False,2024-03-01,38
+199,Feedback on service,General,Positive,False,2024-03-01,6
+200,Need more information about product,General,Positive,True,2024-03-11,32
+201,General inquiry,General,Neutral,True,2024-01-05,17
+202,App crashes on login,Technical,Negative,True,2024-03-26,12
+203,Unable to update payment method,Billing,Neutral,True,2024-02-23,41
+204,Feature not working properly,Technical,Positive,False,2024-01-26,11
+205,Feedback on service,General,Positive,False,2024-02-17,25
+206,Need more information about product,General,Neutral,False,2024-03-25,38
+207,System timeout issue,Technical,Neutral,False,2024-03-04,66
+208,How to use this feature?,General,Neutral,True,2024-02-24,12
+209,Unable to reset password,Account,Negative,True,2024-03-17,8
+210,Billing invoice incorrect,Billing,Positive,False,2024-01-05,32
+211,Unable to reset password,Account,Positive,True,2024-02-28,37
+212,System timeout issue,Technical,Neutral,False,2024-01-05,50
+213,Login issues with account,Account,Positive,False,2024-03-02,4
+214,System timeout issue,Technical,Positive,False,2024-01-30,43
+215,Error while uploading file,Technical,Neutral,True,2024-03-07,67
+216,Unable to reset password,Account,Neutral,False,2024-02-20,20
+217,General inquiry,General,Positive,False,2024-01-12,67
+218,Account locked unexpectedly,Account,Negative,False,2024-02-20,4
+219,General inquiry,General,Negative,False,2024-01-15,13
+220,Account locked unexpectedly,Account,Negative,True,2024-01-16,43
+221,Request for demo,General,Negative,False,2024-01-15,55
+222,Charged twice for subscription,Billing,Neutral,False,2024-03-08,28
+223,App crashes on login,Technical,Neutral,True,2024-02-03,30
+224,Charged twice for subscription,Billing,Negative,False,2024-01-20,58
+225,Refund not processed,Billing,Positive,True,2024-03-06,3
+226,Account locked unexpectedly,Account,Neutral,True,2024-03-26,26
+227,Need more information about product,General,Neutral,False,2024-01-06,68
+228,How to use this feature?,General,Positive,False,2024-03-04,50
+229,Profile update failed,Account,Positive,False,2024-02-16,54
+230,Unable to reset password,Account,Positive,True,2024-03-21,8
+231,Request for demo,General,Positive,True,2024-03-09,5
+232,Feedback on service,General,Negative,True,2024-03-17,7
+233,Verification email not received,Account,Positive,True,2024-03-08,9
+234,Error while uploading file,Technical,Neutral,False,2024-03-25,71
+235,Website not loading,Technical,Positive,False,2024-02-19,57
+236,Feature not working properly,Technical,Negative,False,2024-02-18,11
+237,Unable to update payment method,Billing,Negative,True,2024-01-19,2
+238,Need more information about product,General,Neutral,False,2024-02-07,49
+239,Profile update failed,Account,Positive,False,2024-03-30,11
+240,Login issues with account,Account,Negative,True,2024-01-01,29
+241,Website not loading,Technical,Positive,True,2024-01-28,61
+242,Refund not processed,Billing,Positive,True,2024-01-20,51
+243,General inquiry,General,Negative,True,2024-03-26,28
+244,Unable to update payment method,Billing,Negative,True,2024-03-08,28
+245,Refund not processed,Billing,Positive,True,2024-02-15,6
+246,Profile update failed,Account,Neutral,True,2024-02-01,33
+247,Request for demo,General,Negative,False,2024-03-03,59
+248,App crashes on login,Technical,Positive,True,2024-02-02,23
+249,How to use this feature?,General,Neutral,True,2024-02-06,13
+250,Account locked unexpectedly,Account,Neutral,False,2024-03-21,12
+251,Verification email not received,Account,Negative,True,2024-02-09,20
+252,Refund not processed,Billing,Positive,True,2024-02-29,71
+253,How to use this feature?,General,Neutral,False,2024-03-14,48
+254,Need more information about product,General,Neutral,True,2024-02-08,6
+255,System timeout issue,Technical,Positive,True,2024-02-16,47
+256,Error while uploading file,Technical,Negative,True,2024-01-21,3
+257,Feature not working properly,Technical,Positive,False,2024-02-07,21
+258,Unable to update payment method,Billing,Negative,False,2024-02-13,4
+259,Feedback on service,General,Negative,True,2024-01-18,16
+260,Feedback on service,General,Positive,False,2024-02-03,37
+261,Verification email not received,Account,Negative,False,2024-01-22,71
+262,How to use this feature?,General,Positive,False,2024-02-09,43
+263,Profile update failed,Account,Positive,True,2024-01-20,11
+264,Feature not working properly,Technical,Positive,False,2024-03-25,5
+265,Verification email not received,Account,Negative,False,2024-01-25,24
+266,Account locked unexpectedly,Account,Neutral,True,2024-02-12,17
+267,Account locked unexpectedly,Account,Positive,False,2024-02-26,48
+268,Request for demo,General,Negative,True,2024-01-05,13
+269,Error while uploading file,Technical,Negative,False,2024-03-10,23
+270,Error while uploading file,Technical,Negative,False,2024-01-07,54
+271,Unable to reset password,Account,Negative,False,2024-01-18,68
+272,Refund not processed,Billing,Neutral,True,2024-02-17,10
+273,System timeout issue,Technical,Negative,True,2024-03-27,69
+274,Charged twice for subscription,Billing,Neutral,False,2024-03-03,63
+275,Profile update failed,Account,Neutral,False,2024-01-19,23
+276,Website not loading,Technical,Neutral,False,2024-03-29,12
+277,App crashes on login,Technical,Positive,False,2024-02-23,47
+278,Error while uploading file,Technical,Positive,True,2024-01-18,48
+279,General inquiry,General,Neutral,False,2024-02-15,22
+280,Website not loading,Technical,Negative,True,2024-03-05,24
+281,Payment failed again,Billing,Neutral,False,2024-02-27,60
+282,Error while uploading file,Technical,Positive,True,2024-03-13,34
+283,System timeout issue,Technical,Neutral,True,2024-02-18,47
+284,Feature not working properly,Technical,Negative,False,2024-03-28,32
+285,How to use this feature?,General,Neutral,False,2024-01-14,33
+286,Need more information about product,General,Negative,True,2024-02-05,55
+287,Verification email not received,Account,Neutral,False,2024-02-23,67
+288,How to use this feature?,General,Neutral,True,2024-01-20,31
+289,Billing invoice incorrect,Billing,Negative,True,2024-01-30,9
+290,Charged twice for subscription,Billing,Negative,False,2024-03-16,15
+291,Verification email not received,Account,Positive,True,2024-01-12,47
+292,Unable to update payment method,Billing,Positive,True,2024-01-11,34
+293,Request for demo,General,Negative,True,2024-02-28,68
+294,How to use this feature?,General,Positive,True,2024-01-14,13
+295,App crashes on login,Technical,Neutral,True,2024-01-21,41
+296,Unable to reset password,Account,Positive,False,2024-01-19,24
+297,System timeout issue,Technical,Positive,True,2024-02-18,55
+298,Unable to reset password,Account,Positive,False,2024-01-01,4
+299,Billing invoice incorrect,Billing,Neutral,True,2024-01-30,23
+300,Unable to reset password,Account,Positive,False,2024-03-14,43
+301,Need more information about product,General,Neutral,True,2024-02-24,15
+302,System timeout issue,Technical,Negative,True,2024-02-09,65
+303,Error while uploading file,Technical,Neutral,False,2024-02-18,36
+304,Request for demo,General,Positive,False,2024-02-03,39
+305,Profile update failed,Account,Positive,False,2024-02-11,32
+306,Account locked unexpectedly,Account,Positive,True,2024-01-03,27
+307,Profile update failed,Account,Neutral,True,2024-02-14,32
+308,Unable to reset password,Account,Positive,True,2024-02-06,19
+309,Charged twice for subscription,Billing,Neutral,False,2024-02-22,4
+310,Payment failed again,Billing,Positive,True,2024-02-15,45
+311,System timeout issue,Technical,Negative,False,2024-01-12,31
+312,Billing invoice incorrect,Billing,Negative,False,2024-03-16,13
+313,Error while uploading file,Technical,Negative,True,2024-03-16,63
+314,Need more information about product,General,Neutral,True,2024-03-06,37
+315,Feedback on service,General,Neutral,False,2024-02-19,33
+316,App crashes on login,Technical,Neutral,True,2024-01-16,59
+317,Request for demo,General,Negative,True,2024-02-18,30
+318,Login issues with account,Account,Negative,True,2024-02-16,20
+319,Payment failed again,Billing,Neutral,False,2024-03-20,47
+320,Error while uploading file,Technical,Neutral,False,2024-03-09,53
+321,Login issues with account,Account,Negative,False,2024-01-04,57
+322,Login issues with account,Account,Positive,False,2024-03-23,34
+323,Charged twice for subscription,Billing,Positive,True,2024-02-22,45
+324,Account locked unexpectedly,Account,Positive,True,2024-03-10,36
+325,Feature not working properly,Technical,Neutral,False,2024-02-27,1
+326,Verification email not received,Account,Neutral,True,2024-02-10,12
+327,Website not loading,Technical,Positive,True,2024-01-03,8
+328,Refund not processed,Billing,Negative,False,2024-01-08,1
+329,Login issues with account,Account,Neutral,False,2024-02-09,55
+330,Account locked unexpectedly,Account,Positive,True,2024-01-27,41
+331,Unable to update payment method,Billing,Negative,True,2024-02-03,65
+332,Charged twice for subscription,Billing,Neutral,False,2024-02-11,40
+333,App crashes on login,Technical,Neutral,False,2024-03-02,66
+334,How to use this feature?,General,Neutral,False,2024-02-21,37
+335,Charged twice for subscription,Billing,Neutral,True,2024-02-07,69
+336,Request for demo,General,Neutral,True,2024-02-20,62
+337,Account locked unexpectedly,Account,Neutral,True,2024-01-31,24
+338,Refund not processed,Billing,Neutral,False,2024-02-19,17
+339,General inquiry,General,Positive,True,2024-03-21,14
+340,Need more information about product,General,Negative,True,2024-03-07,58
+341,Refund not processed,Billing,Negative,True,2024-02-16,20
+342,Feature not working properly,Technical,Positive,False,2024-03-04,31
+343,Unable to update payment method,Billing,Neutral,False,2024-01-03,36
+344,Need more information about product,General,Neutral,False,2024-03-11,58
+345,Payment failed again,Billing,Negative,False,2024-03-03,16
+346,Website not loading,Technical,Negative,True,2024-01-18,24
+347,Error while uploading file,Technical,Negative,False,2024-02-14,4
+348,Verification email not received,Account,Neutral,False,2024-02-08,24
+349,Feedback on service,General,Negative,False,2024-02-02,50
+350,Verification email not received,Account,Positive,False,2024-03-22,28
+351,Unable to reset password,Account,Negative,False,2024-03-15,67
+352,Feature not working properly,Technical,Neutral,False,2024-01-19,56
+353,Website not loading,Technical,Negative,True,2024-03-04,45
+354,Website not loading,Technical,Negative,False,2024-03-25,26
+355,Account locked unexpectedly,Account,Negative,True,2024-01-23,66
+356,Unable to update payment method,Billing,Positive,True,2024-03-05,51
+357,How to use this feature?,General,Negative,False,2024-02-08,39
+358,Payment failed again,Billing,Positive,False,2024-02-24,2
+359,Payment failed again,Billing,Neutral,False,2024-02-02,3
+360,Account locked unexpectedly,Account,Neutral,True,2024-03-04,36
+361,Unable to reset password,Account,Neutral,True,2024-01-11,21
+362,App crashes on login,Technical,Negative,True,2024-03-26,2
+363,Unable to update payment method,Billing,Neutral,True,2024-03-11,34
+364,Payment failed again,Billing,Neutral,False,2024-02-02,51
+365,Unable to reset password,Account,Neutral,False,2024-01-04,13
+366,Unable to reset password,Account,Neutral,False,2024-03-13,37
+367,Feedback on service,General,Negative,False,2024-01-07,29
+368,Error while uploading file,Technical,Positive,True,2024-01-12,42
+369,Website not loading,Technical,Positive,True,2024-01-06,23
+370,Error while uploading file,Technical,Negative,False,2024-01-03,56
+371,Feedback on service,General,Negative,False,2024-02-13,7
+372,System timeout issue,Technical,Negative,True,2024-01-30,36
+373,Refund not processed,Billing,Negative,False,2024-02-06,61
+374,Account locked unexpectedly,Account,Neutral,False,2024-03-30,11
+375,Verification email not received,Account,Positive,True,2024-01-18,57
+376,Website not loading,Technical,Negative,True,2024-02-10,70
+377,Feature not working properly,Technical,Neutral,False,2024-01-28,67
+378,Need more information about product,General,Positive,False,2024-03-06,22
+379,App crashes on login,Technical,Negative,True,2024-03-30,52
+380,Feedback on service,General,Negative,False,2024-01-13,43
+381,Unable to update payment method,Billing,Positive,True,2024-01-11,32
+382,System timeout issue,Technical,Neutral,True,2024-03-02,18
+383,Profile update failed,Account,Positive,False,2024-01-16,55
+384,Profile update failed,Account,Negative,False,2024-03-01,15
+385,Error while uploading file,Technical,Neutral,True,2024-02-19,24
+386,Refund not processed,Billing,Negative,False,2024-03-16,62
+387,App crashes on login,Technical,Positive,True,2024-03-07,56
+388,Payment failed again,Billing,Negative,True,2024-02-06,18
+389,Need more information about product,General,Positive,False,2024-02-25,33
+390,Website not loading,Technical,Positive,True,2024-02-11,34
+391,Refund not processed,Billing,Positive,True,2024-03-23,60
+392,Website not loading,Technical,Positive,True,2024-01-03,44
+393,Error while uploading file,Technical,Neutral,False,2024-02-26,64
+394,Profile update failed,Account,Positive,False,2024-02-02,52
+395,Unable to reset password,Account,Negative,True,2024-03-28,69
+396,Verification email not received,Account,Neutral,False,2024-03-28,69
+397,General inquiry,General,Positive,False,2024-02-14,5
+398,System timeout issue,Technical,Negative,False,2024-03-02,33
+399,Feature not working properly,Technical,Neutral,False,2024-03-18,69
+400,General inquiry,General,Negative,False,2024-02-02,34
+401,Error while uploading file,Technical,Neutral,True,2024-01-23,49
+402,Billing invoice incorrect,Billing,Positive,True,2024-02-28,4
+403,General inquiry,General,Positive,False,2024-03-28,13
+404,Login issues with account,Account,Positive,False,2024-01-03,48
+405,Request for demo,General,Negative,False,2024-02-24,57
+406,System timeout issue,Technical,Negative,True,2024-03-28,71
+407,Request for demo,General,Positive,False,2024-03-09,20
+408,Login issues with account,Account,Positive,True,2024-01-01,68
+409,Website not loading,Technical,Neutral,True,2024-01-25,34
+410,Feedback on service,General,Positive,False,2024-01-23,60
+411,System timeout issue,Technical,Negative,True,2024-01-02,7
+412,Need more information about product,General,Negative,False,2024-03-31,61
+413,Need more information about product,General,Negative,False,2024-02-08,24
+414,How to use this feature?,General,Neutral,True,2024-03-20,4
+415,Need more information about product,General,Positive,True,2024-01-05,13
+416,Charged twice for subscription,Billing,Positive,False,2024-02-19,38
+417,Payment failed again,Billing,Positive,True,2024-03-29,24
+418,Request for demo,General,Neutral,True,2024-01-08,33
+419,Feedback on service,General,Negative,False,2024-03-24,40
+420,App crashes on login,Technical,Neutral,True,2024-03-04,51
+421,Need more information about product,General,Positive,False,2024-02-12,27
+422,Unable to update payment method,Billing,Negative,False,2024-02-07,36
+423,Account locked unexpectedly,Account,Negative,True,2024-02-19,62
+424,Verification email not received,Account,Negative,False,2024-02-02,67
+425,Unable to reset password,Account,Positive,False,2024-03-21,31
+426,Website not loading,Technical,Neutral,False,2024-01-14,70
+427,Login issues with account,Account,Negative,False,2024-03-19,7
+428,How to use this feature?,General,Neutral,True,2024-03-21,9
+429,General inquiry,General,Neutral,False,2024-01-29,31
+430,Payment failed again,Billing,Positive,True,2024-02-20,37
+431,Request for demo,General,Neutral,False,2024-01-22,11
+432,Profile update failed,Account,Neutral,False,2024-01-27,46
+433,Billing invoice incorrect,Billing,Neutral,True,2024-02-05,49
+434,App crashes on login,Technical,Positive,True,2024-01-21,26
+435,Profile update failed,Account,Neutral,False,2024-02-28,29
+436,Request for demo,General,Negative,False,2024-03-24,65
+437,Need more information about product,General,Neutral,False,2024-02-18,53
+438,Charged twice for subscription,Billing,Positive,False,2024-02-11,55
+439,Unable to reset password,Account,Positive,True,2024-02-16,12
+440,Feedback on service,General,Neutral,True,2024-01-22,9
+441,Need more information about product,General,Negative,True,2024-01-15,34
+442,Need more information about product,General,Negative,False,2024-03-23,10
+443,Account locked unexpectedly,Account,Neutral,True,2024-01-02,22
+444,Refund not processed,Billing,Positive,False,2024-03-06,62
+445,Request for demo,General,Negative,True,2024-02-18,59
+446,Verification email not received,Account,Neutral,False,2024-01-31,28
+447,System timeout issue,Technical,Neutral,True,2024-03-24,44
+448,Refund not processed,Billing,Neutral,False,2024-01-28,5
+449,Feature not working properly,Technical,Positive,False,2024-03-15,45
+450,Need more information about product,General,Negative,False,2024-03-25,44
+451,Feedback on service,General,Negative,True,2024-03-07,27
+452,Charged twice for subscription,Billing,Neutral,True,2024-02-01,65
+453,Login issues with account,Account,Neutral,True,2024-03-15,25
+454,Feature not working properly,Technical,Neutral,False,2024-02-14,39
+455,System timeout issue,Technical,Negative,False,2024-03-05,23
+456,Login issues with account,Account,Positive,True,2024-03-16,56
+457,Refund not processed,Billing,Positive,False,2024-02-11,46
+458,Website not loading,Technical,Neutral,True,2024-02-24,10
+459,Website not loading,Technical,Negative,True,2024-02-05,47
+460,Unable to reset password,Account,Negative,False,2024-03-09,17
+461,Refund not processed,Billing,Neutral,True,2024-03-16,33
+462,Website not loading,Technical,Neutral,False,2024-01-17,70
+463,Error while uploading file,Technical,Positive,False,2024-03-14,19
+464,How to use this feature?,General,Positive,False,2024-01-10,26
+465,Feature not working properly,Technical,Negative,True,2024-01-03,22
+466,Account locked unexpectedly,Account,Neutral,True,2024-01-14,45
+467,Need more information about product,General,Neutral,False,2024-03-03,51
+468,Unable to update payment method,Billing,Positive,True,2024-02-14,51
+469,Error while uploading file,Technical,Neutral,False,2024-01-21,22
+470,General inquiry,General,Negative,False,2024-03-20,55
+471,Unable to update payment method,Billing,Neutral,False,2024-03-30,43
+472,Feedback on service,General,Neutral,False,2024-01-14,30
+473,Error while uploading file,Technical,Negative,True,2024-02-08,71
+474,Account locked unexpectedly,Account,Positive,False,2024-02-04,13
+475,Website not loading,Technical,Neutral,False,2024-01-19,64
+476,System timeout issue,Technical,Negative,True,2024-02-29,37
+477,General inquiry,General,Neutral,True,2024-01-12,72
+478,Website not loading,Technical,Positive,True,2024-01-24,12
+479,Need more information about product,General,Positive,True,2024-02-26,64
+480,Unable to reset password,Account,Negative,False,2024-02-11,13
+481,Payment failed again,Billing,Negative,False,2024-01-28,2
+482,General inquiry,General,Neutral,False,2024-03-24,53
+483,Account locked unexpectedly,Account,Negative,True,2024-03-19,14
+484,Error while uploading file,Technical,Neutral,False,2024-02-27,44
+485,Unable to reset password,Account,Neutral,False,2024-02-18,53
+486,Account locked unexpectedly,Account,Positive,False,2024-02-20,16
+487,App crashes on login,Technical,Positive,False,2024-01-21,71
+488,Unable to update payment method,Billing,Neutral,True,2024-02-24,50
+489,Charged twice for subscription,Billing,Negative,False,2024-01-30,67
+490,Verification email not received,Account,Negative,False,2024-02-21,21
+491,Website not loading,Technical,Negative,False,2024-02-07,47
+492,Verification email not received,Account,Neutral,False,2024-01-07,3
+493,Unable to update payment method,Billing,Negative,False,2024-01-16,65
+494,Feedback on service,General,Negative,True,2024-02-01,64
+495,Request for demo,General,Neutral,True,2024-03-18,45
+496,Request for demo,General,Positive,True,2024-03-06,8
+497,Refund not processed,Billing,Positive,True,2024-01-15,12
+498,System timeout issue,Technical,Neutral,False,2024-03-09,22
+499,Unable to reset password,Account,Neutral,False,2024-01-30,59
+500,Payment failed again,Billing,Negative,False,2024-03-06,48
