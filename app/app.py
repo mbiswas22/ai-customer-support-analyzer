@@ -9,6 +9,7 @@ from PIL import Image
 
 from utils.data_utils import load_data, add_features, filter_data
 from models.model_utils import process_predictions
+from utils.alert_utils import send_high_priority_alert
 from rag.rag_utils import create_vector_store, answer_question
 from forecasting.forecast_utils import forecast_tickets
 from models.cluster_utils import run_clustering
@@ -86,6 +87,11 @@ if uploaded_file:
         ["All"] + sorted(df["sentiment"].unique().tolist())
     )
 
+    priority_filter = st.sidebar.selectbox(
+        "Priority",
+        ["All", "high", "medium", "low"]
+    )
+
     urgent_filter = st.sidebar.checkbox("Show Urgent Tickets Only")
 
     st.sidebar.markdown("**Date Range**")
@@ -101,7 +107,22 @@ if uploaded_file:
         end_date=end_date
     )
 
+    if priority_filter != "All":
+        filtered_df = filtered_df[filtered_df["priority"] == priority_filter]
+
     st.sidebar.markdown(f"**Showing {len(filtered_df)} of {len(df)} tickets**")
+
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("**🚨 Alerts**")
+    if st.sidebar.button("Send Alert for High Priority Tickets"):
+        try:
+            sent = send_high_priority_alert(filtered_df)
+            if sent:
+                st.sidebar.success(f"Alert sent for {sent} high priority ticket(s)!")
+            else:
+                st.sidebar.info("No high priority tickets to alert on.")
+        except Exception as e:
+            st.sidebar.error(f"Failed to send alert: {e}")
 
     # ---------------------------
     # TABS
@@ -125,6 +146,9 @@ if uploaded_file:
         col1.metric("Total Tickets", len(filtered_df))
         col2.metric("Urgent Tickets", filtered_df["urgent"].sum())
         col3.metric("Negative Sentiment", (filtered_df["sentiment"] == "Negative").sum())
+
+        high_count = (filtered_df["priority"] == "high").sum()
+        st.metric("High Priority Tickets", high_count)
 
         st.subheader("Category Distribution")
         st.bar_chart(filtered_df["category"].value_counts())
