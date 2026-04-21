@@ -1,21 +1,11 @@
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
+from utils.db_utils import get_daily_counts
 
 
-def build_daily_series(df, category=None):
-    data = df.copy()
-    if category and category != "All":
-        data = data[data["category"] == category]
-    data["date"] = pd.to_datetime(data["created_at"]).dt.date
-    series = data.groupby("date").size().reset_index(name="count")
-    series["date"] = pd.to_datetime(series["date"])
-    series = series.sort_values("date").reset_index(drop=True)
-    return series
-
-
-def forecast_tickets(df, days_ahead=7, category=None):
-    series = build_daily_series(df, category)
+def forecast_tickets(df=None, days_ahead=7, category=None):
+    series = get_daily_counts(category)
     if len(series) < 3:
         return None, None
 
