@@ -74,6 +74,7 @@ ai-customer-support-analyzer/
 7. Use the **Forecast** tab to predict ticket volume — select a category and drag the days slider
 8. Use the **Clusters** tab to explore ticket groupings — adjust cluster count (2–4) and color dimension interactively
 9. Use the **Priority filter** in the sidebar to narrow tickets by Low, Medium, or High priority — and click **Send Alert for High Priority Tickets** (also in the sidebar) to email the top 10 most critical high priority tickets ranked by a severity score based on keyword weight, sentiment, response time, and text length
+10.SQLITE database is used to store the support ticket csv file each time the file is loaded; data is replaced each time file is loaded.
 
 ## CSV Format
 
