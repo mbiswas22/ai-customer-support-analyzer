@@ -8,6 +8,7 @@ import base64, io
 from PIL import Image
 
 from utils.data_utils import load_data, add_features, save_to_db
+from utils.db_server import start_server
 from utils.db_utils import (
     get_filtered_tickets, get_distinct_values,
     get_ticket_texts, get_date_range, get_all_tickets
@@ -20,6 +21,11 @@ from models.cluster_utils import run_clustering
 import plotly.express as px
 
 st.set_page_config(page_title="Support Analyzer", layout="wide")
+
+# Start SQLite HTTP server once per session
+if "db_server_started" not in st.session_state:
+    start_server()
+    st.session_state["db_server_started"] = True
 
 # Centered round icon above title
 _img = Image.open(os.path.join(os.path.dirname(__file__), "..", "data", "customer-analysis-icon-1.avif")).convert("RGB")

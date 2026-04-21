@@ -1,98 +1,83 @@
-import sqlite3
+import json
 import pandas as pd
-import os
+from urllib.request import urlopen, Request
+from urllib.parse import urlencode
+from utils.db_server import SERVER_PORT
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "tickets.db")
+BASE_URL = f"http://localhost:{SERVER_PORT}"
+
+def _to_df(data: list) -> pd.DataFrame:
+    if not data:
+        return pd.DataFrame()
+    df = pd.DataFrame(data)
+    if "urgent" in df.columns:
+        df["urgent"] = df["urgent"].map(lambda x: str(x).strip().lower() in ("true", "1"))
+    if "response_time_hours" in df.columns:
+        df["response_time_hours"] = pd.to_numeric(df["response_time_hours"], errors="coerce")
+    if "created_at" in df.columns:
+        df["created_at"] = pd.to_datetime(df["created_at"])
+    return df
 
 
-def _conn():
-    return sqlite3.connect(DB_PATH)
+def _get(path: str, params: dict = None) -> any:
+    url = f"{BASE_URL}{path}"
+    if params:
+        url += "?" + urlencode({k: v for k, v in params.items() if v is not None})
+    with urlopen(url) as r:
+        return json.loads(r.read())
+
+
+def _post(path: str, data: list) -> dict:
+    body = json.dumps(data).encode()
+    req = Request(f"{BASE_URL}{path}", data=body, headers={"Content-Type": "application/json"})
+    with urlopen(req) as r:
+        return json.loads(r.read())
 
 
 def init_db():
-    pass  # Table is created dynamically from DataFrame schema
+    pass  # Table is created on first /tickets/load POST
 
 
 def insert_tickets(df: pd.DataFrame):
-    """Replace all tickets with the newly uploaded CSV data."""
-    with _conn() as con:
-        df.to_sql("tickets", con, if_exists="replace", index=False)
+    records = json.loads(df.to_json(orient="records", date_format="iso"))
+    _post("/tickets/load", records)
 
-
-# ------------------------------------------------------------------
-# Query APIs
-# ------------------------------------------------------------------
 
 def get_all_tickets() -> pd.DataFrame:
-    with _conn() as con:
-        return pd.read_sql("SELECT * FROM tickets", con, parse_dates=["created_at"])
+    return _to_df(_get("/tickets/all"))
 
 
 def get_filtered_tickets(
     category=None, sentiment=None, priority=None,
     urgent_only=False, start_date=None, end_date=None
 ) -> pd.DataFrame:
-    clauses, params = [], []
-
-    if category and category != "All":
-        clauses.append("category = ?")
-        params.append(category)
-    if sentiment and sentiment != "All":
-        clauses.append("sentiment = ?")
-        params.append(sentiment)
-    if priority and priority != "All":
-        clauses.append("priority = ?")
-        params.append(priority)
-    if urgent_only:
-        clauses.append("urgent = 1")
-    if start_date:
-        clauses.append("created_at >= ?")
-        params.append(str(start_date))
-    if end_date:
-        clauses.append("created_at <= ?")
-        params.append(str(end_date))
-
-    where = ("WHERE " + " AND ".join(clauses)) if clauses else ""
-    sql = f"SELECT * FROM tickets {where}"
-
-    with _conn() as con:
-        return pd.read_sql(sql, con, params=params, parse_dates=["created_at"])
+    params = {
+        "category": category,
+        "sentiment": sentiment,
+        "priority": priority,
+        "urgent_only": "1" if urgent_only else None,
+        "start_date": str(start_date) if start_date else None,
+        "end_date": str(end_date) if end_date else None,
+    }
+    return _to_df(_get("/tickets", params))
 
 
 def get_distinct_values(column: str) -> list:
-    with _conn() as con:
-        rows = con.execute(f"SELECT DISTINCT {column} FROM tickets ORDER BY {column}").fetchall()
-    return [r[0] for r in rows if r[0] is not None]
+    return _get("/tickets/distinct", {"column": column})
 
 
 def get_ticket_texts() -> list:
-    with _conn() as con:
-        rows = con.execute("SELECT text FROM tickets").fetchall()
-    return [r[0] for r in rows]
+    return _get("/tickets/texts")
 
 
 def get_daily_counts(category=None) -> pd.DataFrame:
-    if category and category != "All":
-        sql = """
-            SELECT DATE(created_at) as date, COUNT(*) as count
-            FROM tickets WHERE category = ?
-            GROUP BY DATE(created_at) ORDER BY date
-        """
-        params = [category]
-    else:
-        sql = """
-            SELECT DATE(created_at) as date, COUNT(*) as count
-            FROM tickets GROUP BY DATE(created_at) ORDER BY date
-        """
-        params = []
-
-    with _conn() as con:
-        df = pd.read_sql(sql, con, params=params)
-    df["date"] = pd.to_datetime(df["date"])
+    params = {"category": category} if category else {}
+    df = pd.DataFrame(_get("/tickets/daily_counts", params))
+    if not df.empty:
+        df["date"] = pd.to_datetime(df["date"])
     return df
 
 
 def get_date_range() -> tuple:
-    with _conn() as con:
-        row = con.execute("SELECT MIN(created_at), MAX(created_at) FROM tickets").fetchone()
-    return pd.to_datetime(row[0]), pd.to_datetime(row[1])
+    data = _get("/tickets/date_range")
+    return pd.to_datetime(data["min"]), pd.to_datetime(data["max"])
