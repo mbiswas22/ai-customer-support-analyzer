@@ -4,12 +4,12 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 
 import streamlit as st
 import pandas as pd
-import base64, io
+import base64, io, time
 from PIL import Image
 
 from utils.data_utils import load_data, add_features, filter_data
 from models.model_utils import process_predictions
-from utils.alert_utils import send_high_priority_alert
+from utils.alert_utils import send_high_priority_alert, generate_alerts
 from rag.rag_utils import create_vector_store, answer_question
 from forecasting.forecast_utils import forecast_tickets
 from models.cluster_utils import run_clustering
@@ -18,7 +18,7 @@ import plotly.express as px
 st.set_page_config(page_title="Support Analyzer", layout="wide")
 
 # Centered round icon above title
-_img = Image.open(os.path.join(os.path.dirname(__file__), "..", "data", "customer-analysis-icon-1.avif")).convert("RGB")
+_img = Image.open(os.path.join(os.path.dirname(__file__), "..", "data", "icon.jpeg")).convert("RGB")
 _buf = io.BytesIO()
 _img.save(_buf, format="JPEG")
 _b64 = base64.b64encode(_buf.getvalue()).decode()
@@ -27,7 +27,7 @@ _b64 = base64.b64encode(_buf.getvalue()).decode()
 _ICON_HTML_CENTER = f"""
 <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:12px;">
     <img src="data:image/jpeg;base64,{_b64}"
-         style="width:90px; height:90px; border-radius:50%; object-fit:cover;
+         style="width:250px; height:250px; border-radius:32%; object-fit:cover;
                 box-shadow:0 4px 14px rgba(0,0,0,0.3); margin-bottom:12px;">
     <h1 style="margin:0; text-align:center;"> AI Customer Support Analyzer</h1>
 </div>
@@ -70,7 +70,10 @@ if uploaded_file:
             return "low"
         df["priority"] = df.apply(_priority, axis=1)
 
-    st.success("Data processed successfully!")
+    _msg = st.empty()
+    _msg.success("Data processed successfully!")
+    time.sleep(5)
+    _msg.empty()
 
     # ---------------------------
     # GLOBAL FILTERS (sidebar)
@@ -114,6 +117,26 @@ if uploaded_file:
 
     st.sidebar.markdown("---")
     st.sidebar.markdown("**🚨 Alerts**")
+    alerts = generate_alerts(filtered_df)
+
+    if alerts:
+        for level, message in alerts:
+            if level == "error":
+                st.sidebar.error(message)
+            elif level == "warning":
+                st.sidebar.warning(message)
+            else:
+                st.sidebar.info(message)
+    else:
+        st.success("✅ No major alert conditions detected in the filtered ticket set.")
+
+    csv_data = filtered_df.to_csv(index=False).encode("utf-8")
+    st.download_button(
+        label="⬇️ Download Filtered Results",
+        data=csv_data,
+        file_name="filtered_support_tickets.csv",
+        mime="text/csv"
+    )
     if st.sidebar.button("Send Alert for High Priority Tickets"):
         try:
             sent = send_high_priority_alert(filtered_df)
@@ -139,22 +162,32 @@ if uploaded_file:
     # TAB 1: DASHBOARD
     # ---------------------------
     with tab1:
-        st.subheader("Ticket Overview")
+        st.subheader("Ticket Overview")        
 
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4 = st.columns(4)
 
         col1.metric("Total Tickets", len(filtered_df))
         col2.metric("Urgent Tickets", filtered_df["urgent"].sum())
         col3.metric("Negative Sentiment", (filtered_df["sentiment"] == "Negative").sum())
+        col4.metric("High Priority Tickets", (filtered_df["priority"] == "high").sum())
 
-        high_count = (filtered_df["priority"] == "high").sum()
-        st.metric("High Priority Tickets", high_count)
+        # high_count = (filtered_df["priority"] == "high").sum()
+        # st.metric("High Priority Tickets", high_count)
 
-        st.subheader("Category Distribution")
-        st.bar_chart(filtered_df["category"].value_counts())
+        ch_col1, ch_col2 = st.columns(2)
 
-        st.subheader("Sentiment Distribution")
-        st.bar_chart(filtered_df["sentiment"].value_counts())
+        with ch_col1:
+            st.subheader("Category Distribution")
+            st.bar_chart(filtered_df["category"].value_counts())
+
+        with ch_col2:
+            st.subheader("Sentiment Distribution")
+            fig_pie = px.pie(
+                values=filtered_df["sentiment"].value_counts().values,
+                names=filtered_df["sentiment"].value_counts().index,
+                hole=0.3
+            )
+            st.plotly_chart(fig_pie, use_container_width=True)
 
         st.subheader("Tickets Over Time")
         filtered_df["created_at"] = pd.to_datetime(df["created_at"])

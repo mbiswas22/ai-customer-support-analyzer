@@ -60,3 +60,36 @@ def send_high_priority_alert(df):
     )
     SendGridAPIClient(os.getenv("SENDGRID_API_KEY")).send(message)
     return len(top10)
+
+def generate_alerts(dataframe):
+    alerts = []
+
+    if dataframe.empty:
+        return alerts
+
+    urgent_count = int(dataframe["urgent"].sum())
+    negative_count = int((dataframe["sentiment"] == "Negative").sum())
+    total_count = len(dataframe)
+
+    negative_ratio = negative_count / total_count if total_count else 0
+
+    if urgent_count >= 10:
+        alerts.append(("error", f"🚨 High urgent ticket volume detected: {urgent_count} urgent tickets."))
+
+    if negative_ratio >= 0.5:
+        alerts.append(("warning", f"⚠️ Negative sentiment is high: {negative_count} of {total_count} tickets are negative."))
+
+    if "category" in dataframe.columns and not dataframe["category"].empty:
+        top_category = dataframe["category"].value_counts().idxmax()
+        top_count = int(dataframe["category"].value_counts().iloc[0])
+
+        if top_count >= 5:
+            alerts.append(("info", f"📌 Most common issue category: {top_category} ({top_count} tickets)."))
+
+    if "response_time_hours" in dataframe.columns:
+        slow_tickets = int((dataframe["response_time_hours"] > 24).sum())
+        if slow_tickets > 0:
+            alerts.append(("warning", f"⏱️ {slow_tickets} tickets appear to exceed the 24-hour response target."))
+
+    return alerts
+
