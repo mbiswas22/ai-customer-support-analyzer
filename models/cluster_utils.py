@@ -7,7 +7,7 @@ from sklearn.decomposition import PCA
 
 def build_cluster_features(df):
     """Encode categorical + numeric columns into a feature matrix for clustering."""
-    data = df[['category', 'sentiment', 'priority', 'urgent', 'response_time_hours', 'text_length', 'word_count']].copy()
+    data = df[['category', 'sentiment', 'priority', 'urgent', 'response_time_hours']].copy()
 
     for col in ['category', 'sentiment', 'priority']:
         data[col] = LabelEncoder().fit_transform(data[col].astype(str))
